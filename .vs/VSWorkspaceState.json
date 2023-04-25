@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FiremanSystem",
+    "\\FiremanSystem\\FiremanSystem",
+    "\\FiremanSystem\\FiremanSystem\\FiremanSystem"
   ],
-  "SelectedNode": "\\FiremanSystem.sln",
+  "SelectedNode": "\\FiremanSystem\\FiremanSystem\\FiremanSystem\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

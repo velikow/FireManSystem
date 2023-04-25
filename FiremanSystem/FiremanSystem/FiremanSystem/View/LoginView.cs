@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FiremanSystem.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,10 @@ namespace FiremanSystem.View
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
-            var users = controller.ReadAllUsers();
+            var Fireman = FiremanController.ReadAllFireman();
             bool isValidUser = false;
             bool isValidPass = false;
-            foreach (var u in users)
+            foreach (var u in Fireman)
             {
                 if (username == u.Username)
                 {
@@ -60,6 +61,11 @@ namespace FiremanSystem.View
             RegisterView m = new RegisterView();
             this.Hide();
             m.Show();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
