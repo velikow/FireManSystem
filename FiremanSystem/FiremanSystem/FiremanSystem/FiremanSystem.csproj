@@ -70,15 +70,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AccidentsController.cs" />
+    <Compile Include="Controller\FiremanController.cs" />
+    <Compile Include="Controller\FiretruckController.cs" />
+    <Compile Include="Model\Accident.cs">
+      <DependentUpon>FiremanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Fireman.cs">
+      <DependentUpon>FiremanModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\FiremanModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FiremanModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\FiremanModel.cs" />
     <Compile Include="Model\FiremanModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FiremanModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FiremanModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiremanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Firetruck.cs">
+      <DependentUpon>FiremanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +105,12 @@
     </Compile>
     <Compile Include="View\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RegisterView.cs">
       <SubType>Form</SubType>
@@ -130,9 +154,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="FiremanDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -144,6 +166,10 @@
     <Content Include="Model\FiremanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FiremanModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\FiremanModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FiremanModel1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
