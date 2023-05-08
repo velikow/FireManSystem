@@ -34,12 +34,35 @@ namespace FiremanSystem.Controller
             }
         }
 
-        public void UpdateTrucks(int id, Firetruck firetruck)
+        public void UpdateFiretruck(int id, Firetruck firetruck)
+
+        {
+
+            using (FiremanDBEntities db = new FiremanDBEntities())
+            {
+                var firetruckToUpdate = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
+                if (firetruckToUpdate != null)
+                {
+                    firetruckToUpdate.Name= firetruck.Name;
+                    firetruckToUpdate.Id = id;
+                    db.SaveChanges();
+                }
+            }
+        }
+
+
+        public void DeleteFiretruck(int id)
         {
             using (FiremanDBEntities db = new FiremanDBEntities())
             {
-
+                var firetruckToDelete = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
+                if (firetruckToDelete != null)
+                {
+                    db.Firetrucks.Remove(firetruckToDelete);
+                    db.SaveChanges();
+                }
             }
         }
+
     }
 }

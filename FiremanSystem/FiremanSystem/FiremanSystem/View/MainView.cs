@@ -19,5 +19,26 @@ namespace FiremanSystem.View
         {
             InitializeComponent();
         }
+
+        private void btnFireMan_Click(object sender, EventArgs e)
+        {
+            FireManView m = new FireManView();
+            this.Hide();
+            m.Show();
+        }
+
+        private void btnFireTruck_Click(object sender, EventArgs e)
+        {
+            FireTruckView  m = new FireTruckView();
+            this.Hide();
+            m.Show();
+        }
+
+        private void btnAccidents_Click(object sender, EventArgs e)
+        {
+            AccidentsView m = new AccidentsView();
+            this.Hide();
+            m.Show();
+        }
     }
 }
