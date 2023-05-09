@@ -100,6 +100,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AccidentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AccidentsView.Designer.cs">
+      <DependentUpon>AccidentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FireManView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FireManView.Designer.cs">
+      <DependentUpon>FireManView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FireTruckView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FireTruckView.Designer.cs">
+      <DependentUpon>FireTruckView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,8 +145,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AccidentsView.resx">
+      <DependentUpon>AccidentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FireManView.resx">
+      <DependentUpon>FireManView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FireTruckView.resx">
+      <DependentUpon>FireTruckView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegisterView.resx">
       <DependentUpon>RegisterView.cs</DependentUpon>

@@ -35,11 +35,35 @@ namespace FiremanSystem.Controller
         }
 
         public void UpdateAccident(int id, Accident accident)
+
+        {
+
+            using (FiremanDBEntities db = new FiremanDBEntities())
+            {
+                var accidentToUpdate = db.Accidents.Where(u => u.Id == id).FirstOrDefault();
+                if (accidentToUpdate != null)
+                {
+                    accidentToUpdate.Name= accident.Name;
+                    accidentToUpdate.Date= accident.Date;
+                    accidentToUpdate.Id = id;
+                    db.SaveChanges();
+                }
+            }
+        }
+
+
+        public void DeleteAccident(int id)
         {
             using (FiremanDBEntities db = new FiremanDBEntities())
             {
-
+                var accidentToDelete = db.Accidents.Where(u => u.Id == id).FirstOrDefault();
+                if (accidentToDelete != null)
+                {
+                    db.Accidents.Remove(accidentToDelete);
+                    db.SaveChanges();
+                }
             }
         }
+
     }
 }

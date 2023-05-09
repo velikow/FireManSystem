@@ -34,12 +34,34 @@ namespace FiremanSystem.Controller
             }
         }
 
-        public void UpdateUser(int id, Fireman fireman)
+        public void UpdateFireman(int id, Fireman fireman)
         {
             using (FiremanDBEntities db = new FiremanDBEntities())
             {
-
+                var firemanToUpdate = db.Firemen.Where(u => u.Id == id).FirstOrDefault();
+                if (firemanToUpdate != null)
+                {
+                    firemanToUpdate.Id = id;
+                    firemanToUpdate.Username = fireman.Username;
+                    firemanToUpdate.Password = fireman.Password;
+                    db.SaveChanges();
+                }
             }
         }
+
+        
+        public void DeleteFireman(int id)
+        {
+            using (FiremanDBEntities db = new FiremanDBEntities())
+            {
+                var firemanToDelete = db.Firemen.Where(u => u.Id == id).FirstOrDefault();
+                if (firemanToDelete != null)
+                {
+                    db.Firemen.Remove(firemanToDelete);
+                    db.SaveChanges();
+                }
+            }
+        }
+
     }
 }
