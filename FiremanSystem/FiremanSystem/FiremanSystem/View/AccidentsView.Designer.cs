@@ -43,6 +43,7 @@
             this.dgvAccidents.Name = "dgvAccidents";
             this.dgvAccidents.Size = new System.Drawing.Size(236, 155);
             this.dgvAccidents.TabIndex = 0;
+            this.dgvAccidents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccidents_CellContentClick);
             // 
             // btnCreate
             // 

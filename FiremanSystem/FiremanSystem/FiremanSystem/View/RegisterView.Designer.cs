@@ -53,6 +53,7 @@
             this.btnRegister.TabIndex = 1;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click_1);
             // 
             // lblUsername
             // 
@@ -66,7 +67,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(36, 158);
+            this.lblPassword.Location = new System.Drawing.Point(36, 164);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 3;
@@ -76,14 +77,14 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(28, 77);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(174, 20);
+            this.txtUsername.Size = new System.Drawing.Size(180, 20);
             this.txtUsername.TabIndex = 4;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(28, 201);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(164, 20);
+            this.txtPassword.Size = new System.Drawing.Size(180, 20);
             this.txtPassword.TabIndex = 5;
             // 
             // RegisterView

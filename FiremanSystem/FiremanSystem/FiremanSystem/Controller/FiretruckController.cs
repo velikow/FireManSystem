@@ -26,7 +26,7 @@ namespace FiremanSystem.Controller
                 db.SaveChanges();
             }
         }
-        internal List<Firetruck> ReadAllTrcuks()
+        internal List<Firetruck> ReadAllTrucks()
         {
             using (FiremanDBEntities db = new FiremanDBEntities())
             {

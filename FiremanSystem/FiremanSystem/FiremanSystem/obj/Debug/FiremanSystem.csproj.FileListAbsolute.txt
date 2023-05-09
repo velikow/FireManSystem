@@ -40,3 +40,16 @@ C:\Users\moni_\source\repos\Pojarnikari\FiremanSystem\FiremanSystem\FiremanSyste
 C:\Users\moni_\source\repos\Pojarnikari\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.csproj.CopyComplete
 C:\Users\moni_\source\repos\Pojarnikari\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.exe
 C:\Users\moni_\source\repos\Pojarnikari\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.pdb
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.csproj.AssemblyReference.cache
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.Properties.Resources.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.AccidentsView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.FireManView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.FireTruckView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.LoginView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.MainView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.View.RegisterView.resources
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.csproj.GenerateResource.cache
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.csproj.CoreCompileInputs.cache
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.exe
+C:\Users\PC12-204\Source\Repos\FireManSystem\FiremanSystem\FiremanSystem\FiremanSystem\obj\Debug\FiremanSystem.pdb
