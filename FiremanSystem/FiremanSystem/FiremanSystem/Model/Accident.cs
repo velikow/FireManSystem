@@ -14,6 +14,17 @@ namespace FiremanSystem.Model
     
     public partial class Accident
     {
+        public Accident()
+        {
+        }
+
+        public Accident(string name, int date)
+        {
+            Name = name;
+            Date = date;
+        }
         public int Id { get; set; }
+        public string Name { get; set; }
+        public int Date { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FiremanSystem.Controller;
+using FiremanSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace FiremanSystem.View
 {
     public partial class LoginView : Form
     {
+        FiremanController controller = new FiremanController();
         public LoginView()
         {
             InitializeComponent();
@@ -22,10 +24,10 @@ namespace FiremanSystem.View
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
-            var Fireman = FiremanController.ReadAllFireman();
+            var fireman = controller.ReadAllFireman();
             bool isValidUser = false;
             bool isValidPass = false;
-            foreach (var u in Fireman)
+            foreach (var u in fireman)
             {
                 if (username == u.Username)
                 {

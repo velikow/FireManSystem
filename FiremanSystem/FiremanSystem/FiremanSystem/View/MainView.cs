@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FiremanSystem.Controller;
+using FiremanSystem.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace FiremanSystem.View
 {
     public partial class MainView : Form
     {
+        FiremanController controller = new FiremanController();
         public MainView()
         {
             InitializeComponent();
