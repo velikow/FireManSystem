@@ -35,9 +35,9 @@
             // 
             // btnFireMan
             // 
-            this.btnFireMan.Location = new System.Drawing.Point(40, 338);
+            this.btnFireMan.Location = new System.Drawing.Point(280, 135);
             this.btnFireMan.Name = "btnFireMan";
-            this.btnFireMan.Size = new System.Drawing.Size(164, 84);
+            this.btnFireMan.Size = new System.Drawing.Size(164, 49);
             this.btnFireMan.TabIndex = 0;
             this.btnFireMan.Text = "FireMan";
             this.btnFireMan.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btnFireTruck
             // 
-            this.btnFireTruck.Location = new System.Drawing.Point(259, 334);
+            this.btnFireTruck.Location = new System.Drawing.Point(280, 233);
             this.btnFireTruck.Name = "btnFireTruck";
-            this.btnFireTruck.Size = new System.Drawing.Size(198, 93);
+            this.btnFireTruck.Size = new System.Drawing.Size(164, 49);
             this.btnFireTruck.TabIndex = 1;
             this.btnFireTruck.Text = "FireTruck";
             this.btnFireTruck.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // btnAccidents
             // 
-            this.btnAccidents.Location = new System.Drawing.Point(498, 330);
+            this.btnAccidents.Location = new System.Drawing.Point(280, 314);
             this.btnAccidents.Name = "btnAccidents";
-            this.btnAccidents.Size = new System.Drawing.Size(109, 92);
+            this.btnAccidents.Size = new System.Drawing.Size(164, 48);
             this.btnAccidents.TabIndex = 2;
             this.btnAccidents.Text = "Accidents";
             this.btnAccidents.UseVisualStyleBackColor = true;

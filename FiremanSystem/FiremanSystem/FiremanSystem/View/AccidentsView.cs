@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FiremanSystem.View
 {
@@ -32,7 +33,11 @@ namespace FiremanSystem.View
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            Accident accident = new Accident();
+            accident.Name = txtName.Text;
+            accident.Date = txtDate.Text;
+            controller.CreateAccident(accident);
+            RefreshTable();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -40,15 +45,15 @@ namespace FiremanSystem.View
             DataGridViewRow row = dgvAccidents.CurrentRow;
             int id = int.Parse(row.Cells[0].Value.ToString());
             Accident accident = new Accident();
-            user.Username = txtUsername.Text;
-            user.Password = txtPassword.Text;
+            accident.Name = txtName.Text;
+            accident.Date = txtDate.Text;
             controller.UpdateAccident(id, accident);
             RefreshTable();
         }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-
+            RefreshTable();
         }
         private void RefreshTable()
         {
@@ -58,6 +63,11 @@ namespace FiremanSystem.View
         private void dgvAccidents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled =  !char.IsLetterOrDigit(e.KeyChar);
         }
     }
 }

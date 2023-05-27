@@ -43,7 +43,6 @@ namespace FiremanSystem.Controller
                 var firetruckToUpdate = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
                 if (firetruckToUpdate != null)
                 {
-                    firetruckToUpdate.Name= firetruck.Name;
                     firetruckToUpdate.Id = id;
                     db.SaveChanges();
                 }

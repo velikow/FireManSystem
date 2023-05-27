@@ -25,8 +25,8 @@ namespace FiremanSystem.View
             DataGridViewRow row = dgvFireMan.CurrentRow;
             int id = int.Parse(row.Cells[0].Value.ToString());
             Fireman fireman = new Fireman();
-            user.Username = txtUsername.Text;
-            user.Password = txtPassword.Text;
+            fireman.Username = txtUsername.Text;
+            fireman.Password = txtPassword.Text;
             controller.UpdateFireman(id, fireman);
             RefreshTable();
         }
@@ -40,6 +40,20 @@ namespace FiremanSystem.View
             DataGridViewRow row = dgvFireMan.CurrentRow;
             int id = int.Parse(row.Cells[0].Value.ToString());
             controller.DeleteFireman(id);
+            RefreshTable();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            Fireman fireman = new Fireman();
+            fireman.Username = txtUsername.Text;
+            fireman.Password = txtPassword.Text;
+            controller.CreateFireman(fireman);
+            RefreshTable();
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
             RefreshTable();
         }
     }

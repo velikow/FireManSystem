@@ -37,5 +37,13 @@ namespace FiremanSystem.View
             this.Hide();
             m.Show();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginView m = new LoginView();
+            this.Hide();
+            m.Show();
+
+        }
     }
 }

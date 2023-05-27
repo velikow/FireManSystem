@@ -23,7 +23,9 @@ namespace FiremanSystem.View
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            Firetruck firetruck = new Firetruck();
+            controller.CreateFiretruck(firetruck);
+            RefreshTable();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -31,8 +33,6 @@ namespace FiremanSystem.View
             DataGridViewRow row = dgvFireTruck.CurrentRow;
             int id = int.Parse(row.Cells[0].Value.ToString());
             Firetruck firetruck = new Firetruck();
-            user.Username = txtUsername.Text;
-            user.Password = txtPassword.Text;
             controller.UpdateFiretruck(id, firetruck);
             RefreshTable();
         }
@@ -47,6 +47,11 @@ namespace FiremanSystem.View
             int id = int.Parse(row.Cells[0].Value.ToString());
             controller.DeleteFiretruck(id);
             RefreshTable();
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetterOrDigit(e.KeyChar);
         }
     }
 }

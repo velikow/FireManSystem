@@ -33,15 +33,17 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFireTruck)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFireTruck
             // 
             this.dgvFireTruck.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFireTruck.Location = new System.Drawing.Point(312, 86);
+            this.dgvFireTruck.Location = new System.Drawing.Point(448, 21);
             this.dgvFireTruck.Name = "dgvFireTruck";
-            this.dgvFireTruck.Size = new System.Drawing.Size(202, 138);
+            this.dgvFireTruck.Size = new System.Drawing.Size(317, 247);
             this.dgvFireTruck.TabIndex = 0;
             // 
             // btnCreate
@@ -56,9 +58,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(219, 332);
+            this.btnDelete.Location = new System.Drawing.Point(570, 332);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(132, 73);
+            this.btnDelete.Size = new System.Drawing.Size(149, 73);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -66,9 +68,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(378, 332);
+            this.btnUpdate.Location = new System.Drawing.Point(388, 332);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(126, 73);
+            this.btnUpdate.Size = new System.Drawing.Size(149, 73);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -76,18 +78,38 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(529, 332);
+            this.btnRead.Location = new System.Drawing.Point(209, 332);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(117, 73);
+            this.btnRead.Size = new System.Drawing.Size(149, 73);
             this.btnRead.TabIndex = 7;
             this.btnRead.Text = "Read";
             this.btnRead.UseVisualStyleBackColor = true;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(38, 109);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 8;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblid.Location = new System.Drawing.Point(32, 21);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(37, 31);
+            this.lblid.TabIndex = 9;
+            this.lblid.Text = "Id";
             // 
             // FireTruckView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblid);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -97,6 +119,7 @@
             this.Text = "FireTruckView";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFireTruck)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,5 +130,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblid;
     }
 }
