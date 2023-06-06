@@ -26,7 +26,7 @@ namespace FiremanSystem.Controller
                 db.SaveChanges();
             }
         }
-        internal List<Firetruck> ReadAllTrcuks()
+        internal List<Firetruck> ReadAllTrucks()
         {
             using (FiremanDBEntities db = new FiremanDBEntities())
             {
@@ -43,7 +43,6 @@ namespace FiremanSystem.Controller
                 var firetruckToUpdate = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
                 if (firetruckToUpdate != null)
                 {
-                    firetruckToUpdate.Name= firetruck.Name;
                     firetruckToUpdate.Id = id;
                     db.SaveChanges();
                 }

@@ -20,7 +20,7 @@ namespace FiremanSystem.View
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void btnRegister_Click_1(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
@@ -36,6 +36,14 @@ namespace FiremanSystem.View
             LoginView m = new LoginView();
             this.Hide();
             m.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginView m = new LoginView();
+            this.Hide();
+            m.Show();
+
         }
     }
 }

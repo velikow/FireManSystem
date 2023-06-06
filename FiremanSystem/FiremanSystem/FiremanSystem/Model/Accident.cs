@@ -18,13 +18,13 @@ namespace FiremanSystem.Model
         {
         }
 
-        public Accident(string name, int date)
+        public Accident(string name, string date)
         {
             Name = name;
             Date = date;
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Date { get; set; }
+        public string Date { get; set; }
     }
 }
