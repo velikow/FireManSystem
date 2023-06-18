@@ -10,76 +10,151 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Day" Type="date" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\80070880\SOURCE\REPOS\VELIKOW\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANDB.MDF.dbo.AccidentsParticipants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AccidentsParticipants">
+          <Key>
+            <PropertyRef Name="AccidentsId" />
+            <PropertyRef Name="ParticipantsId" />
+          </Key>
+          <Property Name="AccidentsId" Type="int" Nullable="false" />
+          <Property Name="ParticipantsId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Fireman">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Firetruck">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Monday" Type="bit" />
+          <Property Name="Tuesday" Type="bit" />
+          <Property Name="Wednesday" Type="bit" />
+          <Property Name="Thursday" Type="bit" />
+          <Property Name="Friday" Type="bit" />
+          <Property Name="Saturday" Type="bit" />
+          <Property Name="Sunday" Type="bit" />
+          <Property Name="NumberofAccidents" Type="int" Nullable="false" />
+          <Property Name="TotalHoursOfAccidents" Type="int" Nullable="false" />
+          <Property Name="LitersOfWaterUsed" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="FiremanDBModelStoreContainer">
           <EntitySet Name="Accidents" EntityType="Self.Accidents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fireman" EntityType="Self.Fireman" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Firetruck" EntityType="Self.Firetruck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccidentsParticipants" EntityType="Self.AccidentsParticipants" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AccidentsParticipants].[AccidentsId] AS [AccidentsId], 
+    [AccidentsParticipants].[ParticipantsId] AS [ParticipantsId]
+    FROM [dbo].[AccidentsParticipants] AS [AccidentsParticipants]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FiremanDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Accident">
+        <EntityType Name="Accidents">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Day" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Fireman">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Firetruck">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Monday" Type="Boolean" />
+          <Property Name="Tuesday" Type="Boolean" />
+          <Property Name="Wednesday" Type="Boolean" />
+          <Property Name="Thursday" Type="Boolean" />
+          <Property Name="Friday" Type="Boolean" />
+          <Property Name="Saturday" Type="Boolean" />
+          <Property Name="Sunday" Type="Boolean" />
+          <Property Name="NumberofAccidents" Type="Int32" Nullable="false" />
+          <Property Name="TotalHoursOfAccidents" Type="Int32" Nullable="false" />
+          <Property Name="LitersOfWaterUsed" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="FiremanDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Accidents" EntityType="Self.Accident" />
-          <EntitySet Name="Firemen" EntityType="Self.Fireman" />
-          <EntitySet Name="Firetrucks" EntityType="Self.Firetruck" />
+        <EntityType Name="AccidentsParticipants">
+          <Key>
+            <PropertyRef Name="AccidentsId" />
+            <PropertyRef Name="ParticipantsId" />
+          </Key>
+          <Property Name="AccidentsId" Type="Int32" Nullable="false" />
+          <Property Name="ParticipantsId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FiremanDBEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accidents" EntityType="Self.Accidents" />
+          <EntitySet Name="Fireman" EntityType="Self.Fireman" />
+          <EntitySet Name="Firetruck" EntityType="Self.Firetruck" />
+          <EntitySet Name="AccidentsParticipants" EntityType="Self.AccidentsParticipants" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FiremanDBModelStoreContainer" CdmEntityContainer="FiremanDBEntities">
+        <EntityContainerMapping StorageEntityContainer="FiremanDBModelStoreContainer" CdmEntityContainer="FiremanDBEntities2">
           <EntitySetMapping Name="Accidents">
-            <EntityTypeMapping TypeName="FiremanDBModel.Accident">
+            <EntityTypeMapping TypeName="FiremanDBModel.Accidents">
               <MappingFragment StoreEntitySet="Accidents">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Firemen">
+          <EntitySetMapping Name="Fireman">
             <EntityTypeMapping TypeName="FiremanDBModel.Fireman">
               <MappingFragment StoreEntitySet="Fireman">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Firetrucks">
+          <EntitySetMapping Name="Firetruck">
             <EntityTypeMapping TypeName="FiremanDBModel.Firetruck">
               <MappingFragment StoreEntitySet="Firetruck">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Monday" ColumnName="Monday" />
+                <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+                <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+                <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+                <ScalarProperty Name="Friday" ColumnName="Friday" />
+                <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+                <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+                <ScalarProperty Name="NumberofAccidents" ColumnName="NumberofAccidents" />
+                <ScalarProperty Name="TotalHoursOfAccidents" ColumnName="TotalHoursOfAccidents" />
+                <ScalarProperty Name="LitersOfWaterUsed" ColumnName="LitersOfWaterUsed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccidentsParticipants">
+            <EntityTypeMapping TypeName="FiremanDBModel.AccidentsParticipants">
+              <MappingFragment StoreEntitySet="AccidentsParticipants">
+                <ScalarProperty Name="AccidentsId" ColumnName="AccidentsId" />
+                <ScalarProperty Name="ParticipantsId" ColumnName="ParticipantsId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -97,7 +172,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -24,6 +24,13 @@ namespace FiremanSystem.View
         private void btnCreate_Click(object sender, EventArgs e)
         {
             Firetruck firetruck = new Firetruck();
+            firetruck.Monday = checkbox1.Checked;
+            firetruck.Tuesday = checkBox2.Checked;
+            firetruck.Wednesday = checkBox3.Checked;
+            firetruck.Thursday = checkBox4.Checked;
+            firetruck.Friday = checkBox5.Checked;
+            firetruck.Saturday = checkBox6.Checked;
+            firetruck.Sunday = checkBox7.Checked;
             controller.CreateFiretruck(firetruck);
             RefreshTable();
         }
@@ -38,7 +45,7 @@ namespace FiremanSystem.View
         }
         private void RefreshTable()
         {
-            dgvFireTruck.DataSource = controller.ReadAllTrucks();
+            dgvFireTruck.DataSource = controller.ReadAllTrucks(checkbox1.Checked,checkBox2.Checked, checkBox3.Checked, checkBox4.Checked, checkBox5.Checked, checkBox6.Checked, checkBox7.Checked);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -52,6 +59,16 @@ namespace FiremanSystem.View
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsLetterOrDigit(e.KeyChar);
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FireTruckView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

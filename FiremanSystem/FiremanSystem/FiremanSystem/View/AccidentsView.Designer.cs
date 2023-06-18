@@ -36,7 +36,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.PDay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccidents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,20 +116,19 @@
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Name";
             // 
-            // txtDate
+            // PDay
             // 
-            this.txtDate.Location = new System.Drawing.Point(32, 229);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(119, 20);
-            this.txtDate.TabIndex = 9;
-            this.txtDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDate_KeyPress);
+            this.PDay.Location = new System.Drawing.Point(32, 259);
+            this.PDay.Name = "PDay";
+            this.PDay.Size = new System.Drawing.Size(200, 20);
+            this.PDay.TabIndex = 10;
             // 
             // AccidentsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.PDay);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.txtName);
@@ -156,6 +155,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.DateTimePicker PDay;
     }
 }

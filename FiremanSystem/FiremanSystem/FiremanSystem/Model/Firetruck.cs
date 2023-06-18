@@ -14,15 +14,16 @@ namespace FiremanSystem.Model
     
     public partial class Firetruck
     {
-        public Firetruck()
-        {
-        }
-
-        public Firetruck(string name)
-        {
-            Name = name;
-        }
         public int Id { get; set; }
-        public string Name { get; set; }
+        public Nullable<bool> Monday { get; set; }
+        public Nullable<bool> Tuesday { get; set; }
+        public Nullable<bool> Wednesday { get; set; }
+        public Nullable<bool> Thursday { get; set; }
+        public Nullable<bool> Friday { get; set; }
+        public Nullable<bool> Saturday { get; set; }
+        public Nullable<bool> Sunday { get; set; }
+        public int NumberofAccidents { get; set; }
+        public int TotalHoursOfAccidents { get; set; }
+        public int LitersOfWaterUsed { get; set; }
     }
 }

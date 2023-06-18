@@ -11,9 +11,9 @@ namespace FiremanSystem.Controller
     {
         internal void CreateFiretruck(Firetruck firetruck)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var lastFiretruck = db.Firetrucks.ToList().LastOrDefault();
+                var lastFiretruck = db.Firetruck.ToList().LastOrDefault();
                 if (lastFiretruck == null)
                 {
                     firetruck.Id = 1;
@@ -22,15 +22,28 @@ namespace FiremanSystem.Controller
                 {
                     firetruck.Id = lastFiretruck.Id + 1;
                 }
-                db.Firetrucks.Add(firetruck);
+                db.Firetruck.Add(firetruck);
                 db.SaveChanges();
             }
         }
-        internal List<Firetruck> ReadAllTrucks()
+        internal List<Firetruck> ReadAllTrucks(bool Monday,bool Tuesday,bool Wednesday,bool Thursday,bool Firday,bool Saturday,bool Sunday)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                return db.Firetrucks.ToList();
+                List<Firetruck> fireturcks = new List<Firetruck>();
+                List<Firetruck> fireturcksReturn = new List<Firetruck>();
+                fireturcks = db.Firetruck.ToList();
+                foreach (var i in fireturcks)
+                {
+                    if (Monday) { if (i.Monday == Monday) fireturcksReturn.Add(i); }
+                    if (Tuesday) { if (i.Tuesday == Tuesday) fireturcksReturn.Add(i); }
+                    if (Wednesday) { if (i.Wednesday == Wednesday) fireturcksReturn.Add(i); }
+                    if (Thursday) { if (i.Thursday == Thursday) fireturcksReturn.Add(i); }
+                    if (Firday) { if (i.Friday == Firday) fireturcksReturn.Add(i); }
+                    if (Saturday) { if (i.Saturday == Saturday) fireturcksReturn.Add(i); }
+                    if (Sunday) { if (i.Sunday == Sunday) fireturcksReturn.Add(i); }
+                }
+                return fireturcksReturn;
             }
         }
 
@@ -38,9 +51,9 @@ namespace FiremanSystem.Controller
 
         {
 
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var firetruckToUpdate = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
+                var firetruckToUpdate = db.Firetruck.Where(u => u.Id == id).FirstOrDefault();
                 if (firetruckToUpdate != null)
                 {
                     firetruckToUpdate.Id = id;
@@ -52,12 +65,12 @@ namespace FiremanSystem.Controller
 
         public void DeleteFiretruck(int id)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var firetruckToDelete = db.Firetrucks.Where(u => u.Id == id).FirstOrDefault();
+                var firetruckToDelete = db.Firetruck.Where(u => u.Id == id).FirstOrDefault();
                 if (firetruckToDelete != null)
                 {
-                    db.Firetrucks.Remove(firetruckToDelete);
+                    db.Firetruck.Remove(firetruckToDelete);
                     db.SaveChanges();
                 }
             }

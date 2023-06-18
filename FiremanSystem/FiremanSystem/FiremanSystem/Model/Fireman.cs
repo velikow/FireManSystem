@@ -14,15 +14,6 @@ namespace FiremanSystem.Model
     
     public partial class Fireman
     {
-        public Fireman()
-        {
-        }
-
-        public Fireman(string username, string password)
-        {
-            Username = username;
-            Password = password;
-        }
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
