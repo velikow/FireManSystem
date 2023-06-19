@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FiremanDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FiremanDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accidents">
           <Key>
             <PropertyRef Name="Id" />
@@ -14,7 +14,7 @@
           <Property Name="Name" Type="varchar" MaxLength="1" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\80070880\SOURCE\REPOS\VELIKOW\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANDB.MDF.dbo.AccidentsParticipants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'C:\USERS\СТИЛЯН\SOURCE\REPOS\VELIKOW\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANSYSTEM\FIREMANDB.MDF.dbo.AccidentsParticipants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AccidentsParticipants">
           <Key>
             <PropertyRef Name="AccidentsId" />
@@ -28,8 +28,8 @@ warning 6002: The table/view 'C:\USERS\80070880\SOURCE\REPOS\VELIKOW\FIREMANSYST
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Username" Type="varchar" MaxLength="1" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Firetruck">
           <Key>
@@ -58,8 +58,7 @@ warning 6002: The table/view 'C:\USERS\80070880\SOURCE\REPOS\VELIKOW\FIREMANSYST
     FROM [dbo].[AccidentsParticipants] AS [AccidentsParticipants]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FiremanDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -76,8 +75,8 @@ warning 6002: The table/view 'C:\USERS\80070880\SOURCE\REPOS\VELIKOW\FIREMANSYST
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Firetruck">
           <Key>

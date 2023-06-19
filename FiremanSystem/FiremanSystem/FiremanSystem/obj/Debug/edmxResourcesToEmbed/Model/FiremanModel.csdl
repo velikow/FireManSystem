@@ -13,19 +13,37 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Username" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="Firetruck">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Day" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Monday" Type="Boolean" />
+    <Property Name="Tuesday" Type="Boolean" />
+    <Property Name="Wednesday" Type="Boolean" />
+    <Property Name="Thursday" Type="Boolean" />
+    <Property Name="Friday" Type="Boolean" />
+    <Property Name="Saturday" Type="Boolean" />
+    <Property Name="Sunday" Type="Boolean" />
+    <Property Name="NumberofAccidents" Type="Int32" Nullable="false" />
+    <Property Name="TotalHoursOfAccidents" Type="Int32" Nullable="false" />
+    <Property Name="LitersOfWaterUsed" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="FiremanDBEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityType Name="AccidentsParticipants">
+    <Key>
+      <PropertyRef Name="AccidentsId" />
+      <PropertyRef Name="ParticipantsId" />
+    </Key>
+    <Property Name="AccidentsId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantsId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FiremanDBEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accidents" EntityType="Self.Accidents" />
     <EntitySet Name="Fireman" EntityType="Self.Fireman" />
     <EntitySet Name="Firetruck" EntityType="Self.Firetruck" />
+    <EntitySet Name="AccidentsParticipants" EntityType="Self.AccidentsParticipants" />
   </EntityContainer>
 </Schema>

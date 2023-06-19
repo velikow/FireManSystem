@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FiremanDBModelStoreContainer" CdmEntityContainer="FiremanDBEntities1">
+  <EntityContainerMapping StorageEntityContainer="FiremanDBModelStoreContainer" CdmEntityContainer="FiremanDBEntities2">
     <EntitySetMapping Name="Accidents">
       <EntityTypeMapping TypeName="FiremanDBModel.Accidents">
         <MappingFragment StoreEntitySet="Accidents">
@@ -23,7 +23,24 @@
       <EntityTypeMapping TypeName="FiremanDBModel.Firetruck">
         <MappingFragment StoreEntitySet="Firetruck">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+          <ScalarProperty Name="NumberofAccidents" ColumnName="NumberofAccidents" />
+          <ScalarProperty Name="TotalHoursOfAccidents" ColumnName="TotalHoursOfAccidents" />
+          <ScalarProperty Name="LitersOfWaterUsed" ColumnName="LitersOfWaterUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentsParticipants">
+      <EntityTypeMapping TypeName="FiremanDBModel.AccidentsParticipants">
+        <MappingFragment StoreEntitySet="AccidentsParticipants">
+          <ScalarProperty Name="AccidentsId" ColumnName="AccidentsId" />
+          <ScalarProperty Name="ParticipantsId" ColumnName="ParticipantsId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

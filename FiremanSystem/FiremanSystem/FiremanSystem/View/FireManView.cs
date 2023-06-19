@@ -98,7 +98,6 @@ namespace FiremanSystem.View
                 }
             }
             var sortedDict = from entry in dictionary orderby entry.Value ascending select entry;
-            
         }
     }
 }
