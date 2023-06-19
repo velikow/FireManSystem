@@ -15,6 +15,7 @@ namespace FiremanSystem.View
     public partial class FireManView : Form
     {
         FiremanController controller = new FiremanController();
+        AccidentsParticipantsController accidentsParticipantscontroller = new AccidentsParticipantsController();
         public FireManView()
         {
             InitializeComponent();
@@ -55,6 +56,49 @@ namespace FiremanSystem.View
         private void btnRead_Click(object sender, EventArgs e)
         {
             RefreshTable();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AccidentsParticipants accidentsParticipants = new AccidentsParticipants();
+            accidentsParticipants.AccidentsId = int.Parse(accidentidtxt.Text);
+            List<Fireman> list = controller.ReadAllFireman();
+            Fireman temp = new Fireman();
+            foreach (var i in list)
+            {
+                if (i.Username == txtUsername.Text && i.Password == txtPassword.Text)
+                {
+                    temp = i;
+                }
+            }
+            if (temp != null)
+            {
+                accidentsParticipants.ParticipantsId = temp.Id;
+            }
+            else
+            {
+                //nqkuv error
+            }
+            accidentsParticipantscontroller.CreateAccident(accidentsParticipants);
+        }
+
+        private void ReadAccidentsbtn_Click(object sender, EventArgs e)
+        {
+            List<AccidentsParticipants> accidentsList = accidentsParticipantscontroller.ReadAllAccidents();
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
+            foreach (var i in accidentsList)
+            {
+                if (dictionary.ContainsKey(i.ParticipantsId))
+                {
+                    dictionary[i.ParticipantsId]++;
+                }
+                else
+                {
+                    dictionary.Add(i.ParticipantsId, 1);
+                }
+            }
+            var sortedDict = from entry in dictionary orderby entry.Value ascending select entry;
+            
         }
     }
 }

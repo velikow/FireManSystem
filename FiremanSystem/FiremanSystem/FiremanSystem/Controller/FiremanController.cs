@@ -11,9 +11,9 @@ namespace FiremanSystem.Controller
     {
         internal void CreateFireman(Fireman fireman)
         {
-            using(FiremanDBEntities db = new FiremanDBEntities())
+            using(FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var lastFireman = db.Firemen.ToList().LastOrDefault();
+                var lastFireman = db.Fireman.ToList().LastOrDefault();
                 if (lastFireman == null)
                 {
                     fireman.Id = 1;
@@ -22,23 +22,23 @@ namespace FiremanSystem.Controller
                 {
                     fireman.Id = lastFireman.Id + 1;
                 }
-                db.Firemen.Add(fireman);
+                db.Fireman.Add(fireman);
                 db.SaveChanges();
             }
         }
         internal List<Fireman> ReadAllFireman()
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                return db.Firemen.ToList();
+                return db.Fireman.ToList();
             }
         }
 
         public void UpdateFireman(int id, Fireman fireman)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var firemanToUpdate = db.Firemen.Where(u => u.Id == id).FirstOrDefault();
+                var firemanToUpdate = db.Fireman.Where(u => u.Id == id).FirstOrDefault();
                 if (firemanToUpdate != null)
                 {
                     firemanToUpdate.Id = id;
@@ -52,12 +52,12 @@ namespace FiremanSystem.Controller
         
         public void DeleteFireman(int id)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
-                var firemanToDelete = db.Firemen.Where(u => u.Id == id).FirstOrDefault();
+                var firemanToDelete = db.Fireman.Where(u => u.Id == id).FirstOrDefault();
                 if (firemanToDelete != null)
                 {
-                    db.Firemen.Remove(firemanToDelete);
+                    db.Fireman.Remove(firemanToDelete);
                     db.SaveChanges();
                 }
             }

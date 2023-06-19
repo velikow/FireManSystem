@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FiremanSystem",
+    "\\FiremanSystem\\FiremanSystem",
+    "\\FiremanSystem\\FiremanSystem\\FiremanSystem",
+    "\\FiremanSystem\\FiremanSystem\\FiremanSystem\\View"
   ],
-  "SelectedNode": "\\C:\\Users\\PC12-204\\Source\\Repos\\FireManSystem",
+  "SelectedNode": "\\FiremanSystem\\FiremanSystem\\FiremanSystem\\App.config",
   "PreviewInSolutionExplorer": false
 }

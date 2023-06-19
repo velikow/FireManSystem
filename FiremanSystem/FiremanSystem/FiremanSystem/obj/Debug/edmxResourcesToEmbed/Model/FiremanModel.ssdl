@@ -5,18 +5,23 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Day" Type="date" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="1" Nullable="false" />
   </EntityType>
   <EntityType Name="Fireman">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="1" Nullable="false" />
   </EntityType>
   <EntityType Name="Firetruck">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Day" Type="date" Nullable="false" />
   </EntityType>
   <EntityContainer Name="FiremanDBModelStoreContainer">
     <EntitySet Name="Accidents" EntityType="Self.Accidents" Schema="dbo" store:Type="Tables" />

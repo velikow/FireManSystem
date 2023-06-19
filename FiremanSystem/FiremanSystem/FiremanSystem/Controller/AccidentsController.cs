@@ -9,9 +9,9 @@ namespace FiremanSystem.Controller
 {
     internal class AccidentsController
     {
-        internal void CreateAccident(Accident accident)
+        internal void CreateAccident(Accidents accident)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
                 var lastAccident = db.Accidents.ToList().LastOrDefault();
                 if (lastAccident == null)
@@ -26,25 +26,25 @@ namespace FiremanSystem.Controller
                 db.SaveChanges();
             }
         }
-        internal List<Accident> ReadAllAccidents()
+        internal List<Accidents> ReadAllAccidents()
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
                 return db.Accidents.ToList();
             }
         }
 
-        public void UpdateAccident(int id, Accident accident)
+        public void UpdateAccident(int id, Accidents accident)
 
         {
 
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
                 var accidentToUpdate = db.Accidents.Where(u => u.Id == id).FirstOrDefault();
                 if (accidentToUpdate != null)
                 {
                     accidentToUpdate.Name= accident.Name;
-                    accidentToUpdate.Date= accident.Date;
+                    accidentToUpdate.Day= accident.Day;
                     accidentToUpdate.Id = id;
                     db.SaveChanges();
                 }
@@ -54,7 +54,7 @@ namespace FiremanSystem.Controller
 
         public void DeleteAccident(int id)
         {
-            using (FiremanDBEntities db = new FiremanDBEntities())
+            using (FiremanDBEntities2 db = new FiremanDBEntities2())
             {
                 var accidentToDelete = db.Accidents.Where(u => u.Id == id).FirstOrDefault();
                 if (accidentToDelete != null)

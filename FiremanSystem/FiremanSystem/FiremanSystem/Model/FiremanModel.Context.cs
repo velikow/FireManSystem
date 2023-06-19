@@ -13,10 +13,10 @@ namespace FiremanSystem.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FiremanDBEntities : DbContext
+    public partial class FiremanDBEntities2 : DbContext
     {
-        public FiremanDBEntities()
-            : base("name=FiremanDBEntities")
+        public FiremanDBEntities2()
+            : base("name=FiremanDBEntities2")
         {
         }
     
@@ -25,8 +25,9 @@ namespace FiremanSystem.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Accident> Accidents { get; set; }
-        public virtual DbSet<Fireman> Firemen { get; set; }
-        public virtual DbSet<Firetruck> Firetrucks { get; set; }
+        public virtual DbSet<Accidents> Accidents { get; set; }
+        public virtual DbSet<Fireman> Fireman { get; set; }
+        public virtual DbSet<Firetruck> Firetruck { get; set; }
+        public virtual DbSet<AccidentsParticipants> AccidentsParticipants { get; set; }
     }
 }

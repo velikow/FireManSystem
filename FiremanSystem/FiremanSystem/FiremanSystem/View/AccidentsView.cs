@@ -33,9 +33,9 @@ namespace FiremanSystem.View
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Accident accident = new Accident();
+            Accidents accident = new Accidents();
             accident.Name = txtName.Text;
-            accident.Date = txtDate.Text;
+            accident.Day = PDay.Value;
             controller.CreateAccident(accident);
             RefreshTable();
         }
@@ -44,9 +44,9 @@ namespace FiremanSystem.View
         {
             DataGridViewRow row = dgvAccidents.CurrentRow;
             int id = int.Parse(row.Cells[0].Value.ToString());
-            Accident accident = new Accident();
+            Accidents accident = new Accidents();
             accident.Name = txtName.Text;
-            accident.Date = txtDate.Text;
+            accident.Day = PDay.Value;
             controller.UpdateAccident(id, accident);
             RefreshTable();
         }
@@ -63,11 +63,6 @@ namespace FiremanSystem.View
         private void dgvAccidents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void txtDate_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled =  !char.IsLetterOrDigit(e.KeyChar);
         }
     }
 }
